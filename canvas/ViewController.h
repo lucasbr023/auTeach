@@ -7,8 +7,37 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
+#import <AssetsLibrary/AssetsLibrary.h>
+@import AVFoundation;
 
-@interface ViewController : UIViewController
+#import "SettingsViewController.h"
+
+@interface ViewController : UIViewController <SettingsViewControllerDelegate> {
+        
+    CGPoint lastPoint;
+    CGFloat red;
+    CGFloat green;
+    CGFloat blue;
+    CGFloat brush;
+    CGFloat opacity;
+    BOOL mouseSwiped;
+    }
+
+
+@property (weak, nonatomic) IBOutlet UIImageView *mainImage;
+@property (weak, nonatomic) IBOutlet UIImageView *tempDrawImage;
+
+- (IBAction)settings:(id)sender;
+- (IBAction)save:(id)sender;
+- (IBAction)reset:(id)sender;
+
+
+
+- (IBAction)pencilPressed:(id)sender;
+
+
+- (IBAction)eraserPressed:(id)sender;
 
 
 @end
