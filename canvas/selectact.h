@@ -11,6 +11,9 @@
 
 @interface selectact : UIViewController
 
+@property (unsafe_unretained, nonatomic) IBOutlet UIImageView *background_pintura;
+
+@property (unsafe_unretained, nonatomic) IBOutlet UIImageView *jon_pintura;
 
 
 - (IBAction)start:(id)sender;

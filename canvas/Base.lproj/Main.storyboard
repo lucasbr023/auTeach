@@ -12,20 +12,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FuK-zS-PuD">
-                                <rect key="frame" x="171" y="292" width="33" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="03 bg.png" id="2yL-od-bdJ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Start">
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DH5-SX-HXB">
+                                <rect key="frame" x="74" y="209" width="227" height="281"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="03 btn2.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="start:" destination="qoJ-Ns-mKi" eventType="touchUpInside" id="vZ8-io-H05"/>
-                                    <segue destination="vXZ-lx-hvc" kind="modal" id="jNk-lO-D8b"/>
+                                    <action selector="start:" destination="qoJ-Ns-mKi" eventType="touchUpInside" id="F0K-6e-xuM"/>
+                                    <segue destination="vXZ-lx-hvc" kind="modal" id="hep-Hj-RMO"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="03 btn1.png" id="Hwy-oZ-2Bs">
+                                <rect key="frame" x="252" y="96" width="94" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="vpt-GT-5xG"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9d9-yH-wB8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -40,152 +49,158 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="mcR-MM-7I4" userLabel="mainImage">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tela_009.png" id="ZqP-7M-kIl">
+                                <rect key="frame" x="0.0" y="0.0" width="384" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tela_009.png" id="mcR-MM-7I4" userLabel="mainImage">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="dLa-62-Fwh" userLabel="tempDrawImage">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tela_009.png" id="dLa-62-Fwh" userLabel="tempDrawImage">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
                             </imageView>
-                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1QV-Lz-MoB">
-                                <rect key="frame" x="136" y="525" width="29" height="204"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="r8W-sR-Ypn">
+                                <rect key="frame" x="36" y="80" width="95" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <size key="titleShadowOffset" width="17" height="116"/>
-                                <state key="normal" title="Button" image="LightGreen.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="pencilPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="bH1-NF-FJQ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="KxL-qY-hbi">
-                                <rect key="frame" x="164" y="525" width="29" height="204"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <size key="titleShadowOffset" width="17" height="116"/>
-                                <state key="normal" title="Button" image="LightBlue.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="pencilPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="XOI-SF-YCf"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sYR-HX-P1U">
-                                <rect key="frame" x="190" y="525" width="29" height="204"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <size key="titleShadowOffset" width="17" height="116"/>
-                                <state key="normal" title="Button" image="Brown.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="pencilPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="sPe-67-x9t"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tZR-P6-qzG">
-                                <rect key="frame" x="219" y="525" width="29" height="204"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <size key="titleShadowOffset" width="17" height="116"/>
-                                <state key="normal" title="Button" image="DarkOrange.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="pencilPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="JUX-k4-RvA"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lfc-7s-0ss">
-                                <rect key="frame" x="249" y="525" width="29" height="204"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <size key="titleShadowOffset" width="17" height="116"/>
-                                <state key="normal" title="Button" image="Yellow.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="pencilPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="yVz-HZ-JnZ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="NmQ-qT-obR">
-                                <rect key="frame" x="53" y="525" width="29" height="204"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <size key="titleShadowOffset" width="17" height="116"/>
-                                <state key="normal" title="Button" image="Red.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="pencilPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="BAs-4e-EtZ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="78K-n3-uw7">
-                                <rect key="frame" x="82" y="525" width="29" height="204"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <size key="titleShadowOffset" width="17" height="116"/>
-                                <state key="normal" title="Button" image="Blue.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="pencilPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="cgm-HS-VZn"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uFS-Rc-lHp">
-                                <rect key="frame" x="26" y="525" width="29" height="204"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <size key="titleShadowOffset" width="17" height="116"/>
-                                <state key="normal" title="Button" image="Grey.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="pencilPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="r2g-CO-QfK"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hZj-Dt-3MW">
-                                <rect key="frame" x="109" y="525" width="29" height="204"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <size key="titleShadowOffset" width="17" height="116"/>
-                                <state key="normal" title="Button" image="DarkGreen.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="pencilPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Dfz-jf-au4"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Aqo-Fu-lcb">
-                                <rect key="frame" x="278" y="530" width="29" height="137"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="Eraser.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="eraserPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="cND-1w-dzE"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="r8W-sR-Ypn">
-                                <rect key="frame" x="34" y="26" width="91" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Reset">
+                                <state key="normal" image="4 btn1.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="reset:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="5Yy-sM-PlN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6DL-z2-hLP">
-                                <rect key="frame" x="267" y="23" width="61" height="59"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Save">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="save:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="VMh-p8-1Cf"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UKt-SK-wtb">
-                                <rect key="frame" x="0.0" y="525" width="29" height="220"/>
+                                <rect key="frame" x="31" y="550" width="30" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <size key="titleShadowOffset" width="0.0" height="116"/>
-                                <state key="normal" title="Button" image="Black.png">
+                                <state key="normal" title="Button" image="001.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="pencilPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0NM-Vg-uMX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6DL-z2-hLP">
+                                <rect key="frame" x="244" y="80" width="96" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="4 btn2.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="save:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="VMh-p8-1Cf"/>
+                                    <segue destination="Mgn-p7-jJK" kind="modal" id="Aek-EN-PW1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Aqo-Fu-lcb">
+                                <rect key="frame" x="302" y="508" width="44" height="122"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="011.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="eraserPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="cND-1w-dzE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hZj-Dt-3MW">
+                                <rect key="frame" x="139" y="551" width="30" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <size key="titleShadowOffset" width="17" height="116"/>
+                                <state key="normal" title="Button" image="005.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pencilPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Dfz-jf-au4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uFS-Rc-lHp">
+                                <rect key="frame" x="58" y="550" width="30" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <size key="titleShadowOffset" width="17" height="116"/>
+                                <state key="normal" title="Button" image="002.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pencilPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="r2g-CO-QfK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="78K-n3-uw7">
+                                <rect key="frame" x="112" y="550" width="30" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <size key="titleShadowOffset" width="17" height="116"/>
+                                <state key="normal" title="Button" image="004.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pencilPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="cgm-HS-VZn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="NmQ-qT-obR">
+                                <rect key="frame" x="85" y="550" width="30" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <size key="titleShadowOffset" width="17" height="116"/>
+                                <state key="normal" title="Button" image="003.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pencilPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="BAs-4e-EtZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lfc-7s-0ss">
+                                <rect key="frame" x="274" y="550" width="30" height="80"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <size key="titleShadowOffset" width="17" height="116"/>
+                                <state key="normal" title="Button" image="010.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pencilPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="yVz-HZ-JnZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tZR-P6-qzG">
+                                <rect key="frame" x="247" y="551" width="30" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <size key="titleShadowOffset" width="17" height="116"/>
+                                <state key="normal" title="Button" image="009.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pencilPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="JUX-k4-RvA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sYR-HX-P1U">
+                                <rect key="frame" x="220" y="550" width="30" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <size key="titleShadowOffset" width="17" height="116"/>
+                                <state key="normal" title="Button" image="008.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pencilPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="sPe-67-x9t"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="KxL-qY-hbi">
+                                <rect key="frame" x="193" y="550" width="30" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <size key="titleShadowOffset" width="17" height="116"/>
+                                <state key="normal" title="Button" image="007.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pencilPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="XOI-SF-YCf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1QV-Lz-MoB">
+                                <rect key="frame" x="166" y="550" width="30" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <size key="titleShadowOffset" width="17" height="116"/>
+                                <state key="normal" title="Button" image="006.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pencilPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="bH1-NF-FJQ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -196,12 +211,53 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="mainImage" destination="mcR-MM-7I4" id="igv-Qs-7Np"/>
+                        <outlet property="reset_image" destination="ZqP-7M-kIl" id="DFx-7N-LFa"/>
                         <outlet property="tempDrawImage" destination="dLa-62-Fwh" id="Smy-Tc-GfQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="VNO-5a-PBi"/>
             </objects>
-            <point key="canvasLocation" x="1191.5" y="292.5"/>
+            <point key="canvasLocation" x="1125.5" y="292.5"/>
+        </scene>
+        <!--Results-->
+        <scene sceneID="kkf-mz-5pN">
+            <objects>
+                <viewController id="Mgn-p7-jJK" customClass="results" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NPB-Nz-nSZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tela_005.png" id="hdp-Gl-cYe">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bHS-z6-0PR">
+                                <rect key="frame" x="209" y="521" width="132" height="83"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="05 btn2.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3nz-ct-ttR">
+                                <rect key="frame" x="32" y="521" width="135" height="83"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="05 btn1.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="aluno" destination="3nz-ct-ttR" id="BQa-BS-yXN"/>
+                        <outlet property="atividade" destination="bHS-z6-0PR" id="dhA-p0-QfJ"/>
+                        <outlet property="results" destination="hdp-Gl-cYe" id="eRg-ud-VbT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aHE-Qy-Zty" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1582.5" y="292.5"/>
         </scene>
         <!--Firstpage-->
         <scene sceneID="lai-H4-a6l">
@@ -211,31 +267,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alunoselec.png" id="fm8-pd-jx0">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="02 bg.png" id="fm8-pd-jx0">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LtZ-7X-6Ym">
-                                <rect key="frame" x="36" y="136" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="adD-Gr-8Nd">
+                                <rect key="frame" x="141" y="103" width="92" height="119"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Jon">
+                                <state key="normal" title="Button" image="02 btn2.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                            </button>
+                            <button opaque="NO" contentMode="top" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" id="LtZ-7X-6Ym">
+                                <rect key="frame" x="21" y="103" width="92" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Jon" image="02 btn1.png"/>
                                 <connections>
                                     <segue destination="qoJ-Ns-mKi" kind="modal" id="UYa-yD-R7V"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="adD-Gr-8Nd">
-                                <rect key="frame" x="136" y="136" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="HUB-vH-FZ4"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="Ygritte" destination="adD-Gr-8Nd" id="Cfp-9q-SMW"/>
@@ -248,18 +303,29 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Black.png" width="53" height="332"/>
-        <image name="Blue.png" width="53" height="332"/>
-        <image name="Brown.png" width="53" height="332"/>
-        <image name="DarkGreen.png" width="53" height="332"/>
-        <image name="DarkOrange.png" width="53" height="332"/>
-        <image name="Eraser.png" width="55" height="167"/>
-        <image name="Grey.png" width="53" height="332"/>
-        <image name="LightBlue.png" width="53" height="332"/>
-        <image name="LightGreen.png" width="53" height="332"/>
-        <image name="Red.png" width="53" height="332"/>
-        <image name="Yellow.png" width="53" height="332"/>
-        <image name="alunoselec.png" width="3125" height="5558"/>
+        <image name="001.png" width="60" height="179"/>
+        <image name="002.png" width="60" height="179"/>
+        <image name="003.png" width="60" height="179"/>
+        <image name="004.png" width="60" height="179"/>
+        <image name="005.png" width="60" height="179"/>
+        <image name="006.png" width="60" height="179"/>
+        <image name="007.png" width="60" height="179"/>
+        <image name="008.png" width="60" height="179"/>
+        <image name="009.png" width="60" height="179"/>
+        <image name="010.png" width="60" height="179"/>
+        <image name="011.png" width="69" height="179"/>
+        <image name="02 bg.png" width="750" height="1334"/>
+        <image name="02 btn1.png" width="186" height="242"/>
+        <image name="02 btn2.png" width="186" height="242"/>
+        <image name="03 bg.png" width="750" height="1334"/>
+        <image name="03 btn1.png" width="186" height="107"/>
+        <image name="03 btn2.png" width="456" height="561"/>
+        <image name="05 btn1.png" width="272" height="165"/>
+        <image name="05 btn2.png" width="272" height="165"/>
+        <image name="4 btn1.png" width="187" height="79"/>
+        <image name="4 btn2.png" width="187" height="79"/>
+        <image name="tela_005.png" width="750" height="1334"/>
+        <image name="tela_009.png" width="750" height="1334"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import <AssetsLibrary/AssetsLibrary.h>
+
 @import AVFoundation;
 
 #import "SettingsViewController.h"
@@ -24,21 +25,15 @@
     BOOL mouseSwiped;
     }
 
-
 @property (weak, nonatomic) IBOutlet UIImageView *mainImage;
 @property (weak, nonatomic) IBOutlet UIImageView *tempDrawImage;
+@property (weak, nonatomic) IBOutlet UIImageView *reset_image;
 
-- (IBAction)settings:(id)sender;
 - (IBAction)save:(id)sender;
 - (IBAction)reset:(id)sender;
 
-
-
 - (IBAction)pencilPressed:(id)sender;
-
-
 - (IBAction)eraserPressed:(id)sender;
-
 
 @end
 

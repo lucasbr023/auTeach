@@ -13,5 +13,8 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *Ygritte;
 
+@property (weak, nonatomic) IBOutlet UIImageView *background;
+
+
 
 @end

@@ -3,11 +3,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <mutableArray key="Little Days Alt.ttf">
-            <string>LittleDaysAlt</string>
-        </mutableArray>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -15,12 +10,9 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="auTeacher" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.90000000000000036" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AKR-4G-iWY">
-                    <rect key="frame" x="62" y="225" width="251" height="151"/>
-                    <fontDescription key="fontDescription" name="LittleDaysAlt" family="Little Days Alt" pointSize="56"/>
-                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tela1.png" translatesAutoresizingMaskIntoConstraints="NO" id="LKx-HI-kk4">
+                    <rect key="frame" x="0.0" y="0.0" width="383" height="667"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="0.21176470588235294" green="0.63137254901960782" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <nil key="simulatedStatusBarMetrics"/>
@@ -28,4 +20,7 @@
             <point key="canvasLocation" x="547.5" y="454.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="tela1.png" width="750" height="1334"/>
+    </resources>
 </document>

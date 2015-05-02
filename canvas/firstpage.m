@@ -10,4 +10,7 @@
 
 @implementation firstpage
 
+
+- (IBAction)jon:(id)sender {
+}
 @end

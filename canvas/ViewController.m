@@ -8,7 +8,19 @@
 
 #import "ViewController.h"
 
-@interface ViewController (){
+#import "PBJVision.h"
+#import "PBJVisionUtilities.h"
+
+#import <AssetsLibrary/AssetsLibrary.h>
+#import <GLKit/GLKit.h>
+
+@interface ViewController ()<
+UIGestureRecognizerDelegate,
+PBJVisionDelegate,
+UIAlertViewDelegate>
+
+
+{
     
     int countImage;
     NSURL *directoryURL;
@@ -19,12 +31,33 @@
     AVAssetWriter *videoWriter;
     AVAssetWriterInput* writerinput;
     NSTimer *timer;
-    int frameCount;
+    unsigned long frameCount;
+    
+    //gravação da camera frontal
+    UIView *_captureDock;
+    
+    UIView *_previewView;
+    AVCaptureVideoPreviewLayer *_previewLayer;
+    GLKViewController *_effectsViewController;
+    
+    UILabel *_instructionLabel;
+    UIView *_gestureView;
+    UILongPressGestureRecognizer *_longPressGestureRecognizer;
+    UITapGestureRecognizer *_focusTapGestureRecognizer;
+    UITapGestureRecognizer *_photoTapGestureRecognizer;
+    
+    BOOL _recording;
+    
+    ALAssetsLibrary *_assetLibrary;
+    __block NSDictionary *_currentVideo;
+    __block NSDictionary *_currentPhoto;
 }
 
 @end
 
 @implementation ViewController
+
+int record = 1;
 
 - (void)viewDidLoad
 {
@@ -35,11 +68,229 @@
     opacity = 1.0;
     
     countImage = 0;
-    [self startCapture];
+    //[self startCapture];
+    
+    
+    //gravação da camera frontal
+    _assetLibrary = [[ALAssetsLibrary alloc] init];
+    
+    // preview and AV layer
+    _previewView = [[UIView alloc] initWithFrame:CGRectZero];
+    _previewView.backgroundColor = [UIColor blackColor];
+    CGRect previewFrame = CGRectMake(0, 60.0f, CGRectGetWidth(self.view.frame), CGRectGetWidth(self.view.frame));
+    _previewView.frame = previewFrame;
+    _previewLayer = [[PBJVision sharedInstance] previewLayer];
+    _previewLayer.frame = _previewView.bounds;
+    _previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+    [_previewView.layer addSublayer:_previewLayer];
+    
+    if ([[PBJVision sharedInstance] supportsVideoFrameRate:120]) {
+        // set faster frame rate
+    }
+    PBJVision *vision = [PBJVision sharedInstance];
+    vision.cameraDevice = vision.cameraDevice == PBJCameraDeviceBack;
+    [self _startCapture];
     
     [super viewDidLoad];
 }
 
+//gravação da camera frontal
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self _resetCapture];
+    [[PBJVision sharedInstance] startPreview];
+}
+
+//gravação da camera frontal
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [[PBJVision sharedInstance] stopPreview];
+}
+//------------------------------------------gravação da camera frontal------------------------------------------------------------------
+- (void)_startCapture
+{
+    [UIApplication sharedApplication].idleTimerDisabled = YES;
+    //NSLog(@"Antes do StartVideoCapture");
+    [[PBJVision sharedInstance] startVideoCapture];
+    //NSLog(@"Depois do StartVideoCapture");
+}
+
+- (void)_pauseCapture
+{
+    [[PBJVision sharedInstance] pauseVideoCapture];
+}
+
+- (void)_resumeCapture
+{
+    [[PBJVision sharedInstance] resumeVideoCapture];
+}
+
+- (void)_resetCapture
+{
+    PBJVision *vision = [PBJVision sharedInstance];
+    vision.delegate = self;
+    
+    vision.cameraDevice = PBJCameraDeviceFront;
+    
+    vision.cameraMode = PBJCameraModeVideo;
+    //vision.cameraMode = PBJCameraModePhoto; // PHOTO: uncomment to test photo capture
+    vision.cameraOrientation = PBJCameraOrientationPortrait;
+    vision.focusMode = PBJFocusModeContinuousAutoFocus;
+    vision.outputFormat = PBJOutputFormatSquare;
+    vision.videoRenderingEnabled = YES;
+    vision.additionalCompressionProperties = @{AVVideoProfileLevelKey : AVVideoProfileLevelH264Baseline30}; // AVVideoProfileLevelKey requires specific captureSessionPreset
+    
+    // specify a maximum duration with the following property
+    // vision.maximumCaptureDuration = CMTimeMakeWithSeconds(5, 600); // ~ 5 seconds
+}
+
+
+- (void)_endCapture
+{
+    //[self stopCapture];
+    [self performSelector:@selector(_EndCaptureHandler) withObject:nil afterDelay:2.0 ];
+    [self _EndCaptureHandler];
+}
+- (void)_EndCaptureHandler{
+    [UIApplication sharedApplication].idleTimerDisabled = NO;
+    [[PBJVision sharedInstance] endVideoCapture];
+    _effectsViewController.view.hidden = YES;
+}
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    [self _resetCapture];
+}
+
+#pragma mark - PBJVisionDelegate
+
+// session
+
+- (void)visionSessionWillStart:(PBJVision *)vision
+{
+    
+}
+
+- (void)visionSessionDidStart:(PBJVision *)vision
+{
+    //NSLog(@"Inicio do SessionDidStart");
+    //NSLog(@"Final do SessionDidStart");
+}
+
+- (void)visionSessionDidStop:(PBJVision *)vision
+{
+    [_previewView removeFromSuperview];
+}
+
+// preview
+
+- (void)visionSessionDidStartPreview:(PBJVision *)vision
+{
+    NSLog(@"Camera preview did start");
+    
+}
+
+- (void)visionSessionDidStopPreview:(PBJVision *)vision
+{
+    NSLog(@"Camera preview did stop");
+}
+
+// device
+
+- (void)visionCameraDeviceWillChange:(PBJVision *)vision
+{
+    NSLog(@"Camera device will change");
+}
+
+- (void)visionCameraDeviceDidChange:(PBJVision *)vision
+{
+    NSLog(@"Camera device did change");
+}
+
+// mode
+
+- (void)visionCameraModeWillChange:(PBJVision *)vision
+{
+    NSLog(@"Camera mode will change");
+}
+
+- (void)visionCameraModeDidChange:(PBJVision *)vision
+{
+    NSLog(@"Camera mode did change");
+}
+
+// format
+
+- (void)visionOutputFormatWillChange:(PBJVision *)vision
+{
+    NSLog(@"Output format will change");
+}
+
+- (void)visionOutputFormatDidChange:(PBJVision *)vision
+{
+    NSLog(@"Output format did change");
+}
+
+- (void)vision:(PBJVision *)vision didChangeCleanAperture:(CGRect)cleanAperture
+{
+}
+
+// video capture
+
+- (void)visionDidStartVideoCapture:(PBJVision *)vision
+{
+    _recording = YES;
+}
+
+- (void)visionDidPauseVideoCapture:(PBJVision *)vision
+{
+}
+
+- (void)visionDidResumeVideoCapture:(PBJVision *)vision
+{
+}
+
+- (void)vision:(PBJVision *)vision capturedVideo:(NSDictionary *)videoDict error:(NSError *)error
+{
+    _recording = NO;
+    
+    if (error && [error.domain isEqual:PBJVisionErrorDomain] && error.code == PBJVisionErrorCancelled) {
+        NSLog(@"recording session cancelled");
+        return;
+    } else if (error) {
+        NSLog(@"encounted an error in video capture (%@)", error);
+        return;
+    }
+    
+    _currentVideo = videoDict;
+    
+    NSString *videoPath = [_currentVideo  objectForKey:PBJVisionVideoPathKey];
+    [_assetLibrary writeVideoAtPathToSavedPhotosAlbum:[NSURL URLWithString:videoPath] completionBlock:^(NSURL *assetURL, NSError *error1) {
+        /*UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Video Saved!" message: @"Saved to the camera roll."
+                                                       delegate:self
+                                              cancelButtonTitle:nil
+                                              otherButtonTitles:@"OK", nil];
+        [alert show];*/
+    }];
+}
+
+// progress
+
+- (void)vision:(PBJVision *)vision didCaptureVideoSampleBuffer:(CMSampleBufferRef)sampleBuffer
+{
+    //    NSLog(@"captured audio (%f) seconds", vision.capturedAudioSeconds);
+}
+
+- (void)vision:(PBJVision *)vision didCaptureAudioSample:(CMSampleBufferRef)sampleBuffer
+{
+    //    NSLog(@"captured video (%f) seconds", vision.capturedVideoSeconds);
+}
+//------------------------------------------gravação da camera frontal------------------------------------------------------------------video.
 
 -(void)startCapture{
     directoryURL = [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingPathComponent:    [[NSProcessInfo processInfo] globallyUniqueString]] isDirectory:YES];
@@ -98,7 +349,7 @@
     
     // - writing
     frameCount = 0;
-    NSTimeInterval interval = 0.04;
+    NSTimeInterval interval = 0.0055;
     timer = [NSTimer scheduledTimerWithTimeInterval:interval target:self selector:@selector(writing) userInfo:nil repeats:YES];
     
 }
@@ -111,10 +362,13 @@
         if(adaptor.assetWriterInput.readyForMoreMediaData){
             CMTime frameTime = CMTimeMake(frameCount, (int32_t)kRecordingFPS);
             append_ok = [adaptor appendPixelBuffer:buffer withPresentationTime:frameTime];
-            [NSThread sleepForTimeInterval:0.05];
+            if(buffer){
+                CVBufferRelease(buffer);
+            }
+            [NSThread sleepForTimeInterval:0.0055];
         }else{
             NSLog(@"Adptor not ready, %d, %d",frameCount,j);
-            [NSThread sleepForTimeInterval:0.1];
+            [NSThread sleepForTimeInterval:0.0055];
         }
         j++;
     }
@@ -122,11 +376,11 @@
      NSLog(@"Got error");
      else
      NSLog(@"Got sucess!");*/
-    
-    if(frameCount > 140){
-        [self finishing];
-        [timer invalidate];
-    }
+//    
+//    if(frameCount > 140){
+//        [self finishing];
+//        [timer invalidate];
+//    }
     frameCount++;
 }
 -(void)finishing{
@@ -223,7 +477,13 @@
 // canvas
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    
+    //NSLog(@"CAMERA GRAVANDO 0");
+    if (record){
+        //NSLog(@"CAMERA GRAVANDO 1");
+        [self _startCapture];
+        record = 0;
+        //NSLog(@"CAMERA GRAVANDO 2");
+    }
     mouseSwiped = NO;
     UITouch *touch = [touches anyObject];
     lastPoint = [touch locationInView:self.view];
@@ -276,7 +536,9 @@
     UIGraphicsEndImageContext();
 }
 - (IBAction)reset:(id)sender {
-    self.mainImage.image = nil;
+    self.mainImage.image = self.reset_image.image;
+    
+    
 }
 
 - (IBAction)pencilPressed:(id)sender {
@@ -356,19 +618,17 @@
 }
 - (IBAction)save:(id)sender {
     
+    [self _endCapture];
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@""
                                                              delegate:self
                                                     cancelButtonTitle:nil
                                                destructiveButtonTitle:nil
-                                                    otherButtonTitles:@"Save to Camera Roll", @"Tweet it!", @"Cancel", nil];
+                                                    otherButtonTitles:@"Save to Camera Roll", @"Cancel", nil];
     [actionSheet showInView:self.view];
 }
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex == 1)
-    {
-        //Tweet Image
-    }
+
     if (buttonIndex == 0)
     {
         UIGraphicsBeginImageContextWithOptions(_mainImage.bounds.size, NO,0.0);
@@ -391,6 +651,5 @@
         [alert show];
     }
 }
-- (IBAction)settings:(id)sender {
-}
+
 @end
