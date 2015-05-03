@@ -27,6 +27,8 @@
 
 - (IBAction)saveInfo:(id)sender;
 
+- (IBAction)atividades:(id)sender;
+
 @property (nonatomic, strong) id<EditInfoViewControllerDelegate> delegate;
 
 

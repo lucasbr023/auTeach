@@ -38,6 +38,10 @@
                                     <color key="titleColor" red="0.16470588235294117" green="0.56470588235294117" blue="0.82745098039215681" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="atividades:" destination="WdN-jv-Nm1" eventType="touchUpInside" id="vgT-xo-LZi"/>
+                                    <segue destination="qoJ-Ns-mKi" kind="push" id="8h1-8V-KiX"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -45,7 +49,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Editar Informações" id="ffB-Dx-fXP">
                         <barButtonItem key="leftBarButtonItem" title="Salvar" id="vBg-9X-dFH">
-                            <color key="tintColor" red="0.16470588235294117" green="0.56470588235294117" blue="0.82745098039215681" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="saveInfo:" destination="WdN-jv-Nm1" id="3Re-5N-Lxw"/>
                             </connections>
@@ -59,9 +63,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LiW-sb-u1O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="678.5" y="1181.5"/>
+            <point key="canvasLocation" x="1144.5" y="290.5"/>
         </scene>
-        <!--Selectact-->
+        <!--Selecionar atividade-->
         <scene sceneID="wli-Po-otf">
             <objects>
                 <viewController id="qoJ-Ns-mKi" customClass="selectact" sceneMemberID="viewController">
@@ -72,6 +76,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="03 bg.png" id="2yL-od-bdJ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.1647058824" green="0.56470588239999997" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DH5-SX-HXB">
                                 <rect key="frame" x="74" y="209" width="227" height="281"/>
@@ -81,7 +86,7 @@
                                 </state>
                                 <connections>
                                     <action selector="start:" destination="qoJ-Ns-mKi" eventType="touchUpInside" id="F0K-6e-xuM"/>
-                                    <segue destination="vXZ-lx-hvc" kind="modal" id="hep-Hj-RMO"/>
+                                    <segue destination="vXZ-lx-hvc" kind="push" id="Vdd-gZ-lWW"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="03 btn1.png" id="Hwy-oZ-2Bs">
@@ -91,14 +96,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="vpt-GT-5xG"/>
+                    <navigationItem key="navigationItem" title="Selecionar atividade" id="vpt-GT-5xG">
+                        <barButtonItem key="backBarButtonItem" title="Voltar" id="e79-2H-y4e"/>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9d9-yH-wB8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1195.5" y="292.5"/>
+            <point key="canvasLocation" x="1673.5" y="290.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Pintura-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
@@ -148,7 +155,7 @@
                                 </state>
                                 <connections>
                                     <action selector="save:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="VMh-p8-1Cf"/>
-                                    <segue destination="Mgn-p7-jJK" kind="modal" id="Aek-EN-PW1"/>
+                                    <segue destination="Mgn-p7-jJK" kind="push" id="6XK-aQ-Mrl"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Aqo-Fu-lcb">
@@ -263,7 +270,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="mJg-t8-EnC"/>
+                    <navigationItem key="navigationItem" title="Pintura" id="mJg-t8-EnC">
+                        <barButtonItem key="backBarButtonItem" title="Voltar" id="080-fF-TJ6"/>
+                    </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -275,9 +284,9 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="VNO-5a-PBi"/>
             </objects>
-            <point key="canvasLocation" x="1657.5" y="292.5"/>
+            <point key="canvasLocation" x="2135.5" y="290.5"/>
         </scene>
-        <!--Results-->
+        <!--Resultados-->
         <scene sceneID="kkf-mz-5pN">
             <objects>
                 <viewController id="Mgn-p7-jJK" customClass="results" sceneMemberID="viewController">
@@ -306,6 +315,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Resultados" id="mp2-ot-6YF">
+                        <barButtonItem key="backBarButtonItem" title="Voltar" id="5eK-uw-TmN"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="aluno" destination="3nz-ct-ttR" id="BQa-BS-yXN"/>
                         <outlet property="atividade" destination="bHS-z6-0PR" id="dhA-p0-QfJ"/>
@@ -314,7 +326,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aHE-Qy-Zty" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2114.5" y="292.5"/>
+            <point key="canvasLocation" x="2723.5" y="290.5"/>
         </scene>
         <!--Selecionar aluno-->
         <scene sceneID="lai-H4-a6l">
@@ -329,7 +341,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="idCellRecord" editingAccessoryType="detailDisclosureButton" textLabel="Als-R1-MBV" detailTextLabel="ZII-5S-aOA" rowHeight="112" style="IBUITableViewCellStyleSubtitle" id="Sel-Yv-ZwD">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="idCellRecord" editingAccessoryType="detailDisclosureButton" textLabel="Als-R1-MBV" rowHeight="112" style="IBUITableViewCellStyleDefault" id="Sel-Yv-ZwD">
                                         <rect key="frame" x="0.0" y="86" width="375" height="112"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Sel-Yv-ZwD" id="UV6-Cp-Ex3">
@@ -342,14 +354,10 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZII-5S-aOA">
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
+                                            <color key="tintColor" red="0.16470588235294117" green="0.56470588235294117" blue="0.82745098039215681" alpha="1" colorSpace="calibratedRGB"/>
                                         </tableViewCellContentView>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -360,7 +368,7 @@
                     <navigationItem key="navigationItem" title="Selecionar aluno" id="HUB-vH-FZ4">
                         <barButtonItem key="backBarButtonItem" title="Voltar" id="XDc-pn-hS8"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="guX-Jj-fi0">
-                            <color key="tintColor" red="0.16470588235294117" green="0.56470588235294117" blue="0.82745098039215681" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="addNewRecord:" destination="r5a-Pv-Vir" id="Jta-Qk-q2y"/>
                             </connections>
@@ -376,12 +384,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yXz-Xo-RuN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="678.5" y="292.5"/>
+            <point key="canvasLocation" x="649.5" y="290.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9mQ-qj-9eA">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5qg-qO-zbD" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="5qg-qO-zbD" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xxl-lb-duo">
@@ -389,13 +397,17 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="hab-7P-3EM">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </toolbar>
                     <connections>
                         <segue destination="r5a-Pv-Vir" kind="relationship" relationship="rootViewController" id="O7e-yO-O7Z"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qs6-MI-3o0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="146" y="292"/>
+            <point key="canvasLocation" x="147.5" y="290.5"/>
         </scene>
     </scenes>
     <resources>
@@ -425,4 +437,5 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <color key="tintColor" red="0.16470588235294117" green="0.56470588235294117" blue="0.82745098039215681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

@@ -44,6 +44,8 @@
 
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"alunos.sql"];
     [self loadData];
+    
+    
 }
 
 -(void)loadData{

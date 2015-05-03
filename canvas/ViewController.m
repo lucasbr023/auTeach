@@ -14,13 +14,7 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 #import <GLKit/GLKit.h>
 
-@interface ViewController ()<
-UIGestureRecognizerDelegate,
-PBJVisionDelegate,
-UIAlertViewDelegate>
-
-
-{
+@interface ViewController ()<UIGestureRecognizerDelegate,PBJVisionDelegate,UIAlertViewDelegate>{ 
     
     int countImage;
     NSURL *directoryURL;
