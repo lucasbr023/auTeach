@@ -11,6 +11,8 @@
 @implementation firstpage
 
 
-- (IBAction)jon:(id)sender {
+- (IBAction)addNewRecord:(id)sender {
+    [self performSegueWithIdentifier:@"idSegueEditInfo" sender:self];
 }
+
 @end

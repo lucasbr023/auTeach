@@ -9,12 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface firstpage : UIViewController
-@property (weak, nonatomic) IBOutlet UIButton *jon;
 
-@property (weak, nonatomic) IBOutlet UIButton *Ygritte;
-
-@property (weak, nonatomic) IBOutlet UIImageView *background;
+@property (weak, nonatomic) IBOutlet UITableView *tblPeople;
 
 
+- (IBAction)addNewRecord:(id)sender;
 
 @end

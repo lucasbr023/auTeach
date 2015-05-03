@@ -50,6 +50,10 @@
 		9AC7BBB21AF3F16C008698AC /* firstpage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC7BBB11AF3F16C008698AC /* firstpage.m */; };
 		9AD589EF1AF51A9B00D701BD /* tela_009.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AD589EE1AF51A9B00D701BD /* tela_009.png */; };
 		9AD589F21AF51F3600D701BD /* results.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD589F11AF51F3600D701BD /* results.m */; };
+		9ADCAE2B1AF67F2A00B82B85 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ADCAE2A1AF67F2A00B82B85 /* libsqlite3.dylib */; settings = {ATTRIBUTES = (Required, ); }; };
+		9ADCAE2E1AF67FB200B82B85 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ADCAE2D1AF67FB200B82B85 /* DBManager.m */; };
+		9ADCAE331AF6874E00B82B85 /* EditInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ADCAE321AF6874E00B82B85 /* EditInfoViewController.m */; };
+		9ADCAE391AF6A1AE00B82B85 /* alunos.sql in Resources */ = {isa = PBXBuildFile; fileRef = 9ADCAE381AF6A1AE00B82B85 /* alunos.sql */; };
 		9FC8146F1AF47ABF000585E3 /* PBJVision.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC814681AF47ABF000585E3 /* PBJVision.m */; };
 		9FC814701AF47ABF000585E3 /* PBJGLProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC8146A1AF47ABF000585E3 /* PBJGLProgram.m */; };
 		9FC814711AF47ABF000585E3 /* PBJMediaWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC8146C1AF47ABF000585E3 /* PBJMediaWriter.m */; };
@@ -120,9 +124,15 @@
 		9AC03CDE1AF1726200761A96 /* canvasTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = canvasTests.m; sourceTree = "<group>"; };
 		9AC7BBB01AF3F16C008698AC /* firstpage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = firstpage.h; sourceTree = "<group>"; };
 		9AC7BBB11AF3F16C008698AC /* firstpage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = firstpage.m; sourceTree = "<group>"; };
-		9AD589EE1AF51A9B00D701BD /* tela_009.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tela_009.png; sourceTree = "<group>"; };
+		9AD589EE1AF51A9B00D701BD /* tela_009.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tela_009.png; path = ../tela_009.png; sourceTree = "<group>"; };
 		9AD589F01AF51F3600D701BD /* results.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = results.h; sourceTree = "<group>"; };
 		9AD589F11AF51F3600D701BD /* results.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = results.m; sourceTree = "<group>"; };
+		9ADCAE2A1AF67F2A00B82B85 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		9ADCAE2C1AF67FB200B82B85 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		9ADCAE2D1AF67FB200B82B85 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		9ADCAE311AF6874E00B82B85 /* EditInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditInfoViewController.h; sourceTree = "<group>"; };
+		9ADCAE321AF6874E00B82B85 /* EditInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditInfoViewController.m; sourceTree = "<group>"; };
+		9ADCAE381AF6A1AE00B82B85 /* alunos.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = alunos.sql; sourceTree = "<group>"; };
 		9FC814661AF4741F000585E3 /* Little-Days-Alt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Little-Days-Alt.ttf"; sourceTree = "<group>"; };
 		9FC814671AF47ABF000585E3 /* PBJVision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBJVision.h; sourceTree = "<group>"; };
 		9FC814681AF47ABF000585E3 /* PBJVision.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBJVision.m; sourceTree = "<group>"; };
@@ -145,6 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ADCAE2B1AF67F2A00B82B85 /* libsqlite3.dylib in Frameworks */,
 				9A9710A21AF40C5B00B20B2A /* AssetsLibrary.framework in Frameworks */,
 				9A9710A01AF40C5400B20B2A /* AVFoundation.framework in Frameworks */,
 			);
@@ -217,7 +228,6 @@
 		9AC03CB61AF1726200761A96 = {
 			isa = PBXGroup;
 			children = (
-				9AD589EE1AF51A9B00D701BD /* tela_009.png */,
 				9A9710A11AF40C5B00B20B2A /* AssetsLibrary.framework */,
 				9A97109F1AF40C5400B20B2A /* AVFoundation.framework */,
 				9AC03CC11AF1726200761A96 /* canvas */,
@@ -238,21 +248,28 @@
 		9AC03CC11AF1726200761A96 /* canvas */ = {
 			isa = PBXGroup;
 			children = (
-				9AD589F01AF51F3600D701BD /* results.h */,
-				9AD589F11AF51F3600D701BD /* results.m */,
+				9ADCAE381AF6A1AE00B82B85 /* alunos.sql */,
+				9ADCAE2A1AF67F2A00B82B85 /* libsqlite3.dylib */,
+				9AD589EE1AF51A9B00D701BD /* tela_009.png */,
 				9A9710961AF3F97B00B20B2A /* Resources */,
 				9AC03CC61AF1726200761A96 /* AppDelegate.h */,
 				9AC03CC71AF1726200761A96 /* AppDelegate.m */,
 				9AC03CC91AF1726200761A96 /* ViewController.h */,
 				9AC03CCA1AF1726200761A96 /* ViewController.m */,
+				9AD589F01AF51F3600D701BD /* results.h */,
+				9AD589F11AF51F3600D701BD /* results.m */,
 				9AC03CCC1AF1726200761A96 /* Main.storyboard */,
-				9AC7BBB01AF3F16C008698AC /* firstpage.h */,
+				9ADCAE311AF6874E00B82B85 /* EditInfoViewController.h */,
+				9ADCAE321AF6874E00B82B85 /* EditInfoViewController.m */,
 				9A9710A31AF40E8800B20B2A /* selectact.h */,
 				9A9710A41AF40E8800B20B2A /* selectact.m */,
+				9AC7BBB01AF3F16C008698AC /* firstpage.h */,
 				9AC7BBB11AF3F16C008698AC /* firstpage.m */,
 				9AC03CCF1AF1726200761A96 /* Images.xcassets */,
 				9AC03CD11AF1726200761A96 /* LaunchScreen.xib */,
 				9AC03CC21AF1726200761A96 /* Supporting Files */,
+				9ADCAE2C1AF67FB200B82B85 /* DBManager.h */,
+				9ADCAE2D1AF67FB200B82B85 /* DBManager.m */,
 			);
 			path = canvas;
 			sourceTree = "<group>";
@@ -385,6 +402,7 @@
 				9FC8147C1AF47B0D000585E3 /* Shader.vsh in Resources */,
 				9A5B81DE1AF50E060001E696 /* 005.png in Resources */,
 				9A5B81EF1AF50E060001E696 /* 4 btn2.png in Resources */,
+				9ADCAE391AF6A1AE00B82B85 /* alunos.sql in Resources */,
 				9A5B81DA1AF50E060001E696 /* 001.png in Resources */,
 				9A5B81DC1AF50E060001E696 /* 003.png in Resources */,
 				9A5B81E71AF50E060001E696 /* 02 btn2.png in Resources */,
@@ -428,12 +446,14 @@
 				9FC814721AF47ABF000585E3 /* PBJVisionUtilities.m in Sources */,
 				9AC03CC81AF1726200761A96 /* AppDelegate.m in Sources */,
 				9A9710A51AF40E8800B20B2A /* selectact.m in Sources */,
+				9ADCAE331AF6874E00B82B85 /* EditInfoViewController.m in Sources */,
 				9AC03CC51AF1726200761A96 /* main.m in Sources */,
 				9AC7BBB21AF3F16C008698AC /* firstpage.m in Sources */,
 				9FC814781AF47B05000585E3 /* PBJStrobeView.m in Sources */,
 				9FC814771AF47B05000585E3 /* PBJFocusView.m in Sources */,
 				9AD589F21AF51F3600D701BD /* results.m in Sources */,
 				9FC8146F1AF47ABF000585E3 /* PBJVision.m in Sources */,
+				9ADCAE2E1AF67FB200B82B85 /* DBManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
