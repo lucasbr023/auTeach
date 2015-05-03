@@ -37,6 +37,12 @@
 		9A5B81F51AF50E060001E696 /* tela_004.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A5B81D71AF50E060001E696 /* tela_004.png */; };
 		9A5B81F61AF50E060001E696 /* tela_005.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A5B81D81AF50E060001E696 /* tela_005.png */; };
 		9A5B81F71AF50E060001E696 /* template_iphone6_4.ai in Resources */ = {isa = PBXBuildFile; fileRef = 9A5B81D91AF50E060001E696 /* template_iphone6_4.ai */; };
+		9A6B6BC81AF5B62200204FAC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6B6BC71AF5B62200204FAC /* CoreData.framework */; };
+		9A6B6BCB1AF5B6C900204FAC /* alunos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B6BC91AF5B6C900204FAC /* alunos.xcdatamodeld */; };
+		9A6B6BCD1AF5B77200204FAC /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6B6BCC1AF5B77200204FAC /* libsqlite3.dylib */; };
+		9A6B6BD01AF5B7C800204FAC /* alunos.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B6BCF1AF5B7C800204FAC /* alunos.m */; };
+		9A6B6BD21AF5BD1200204FAC /* alunosDB.sql in Resources */ = {isa = PBXBuildFile; fileRef = 9A6B6BD11AF5BD1200204FAC /* alunosDB.sql */; };
+		9A6B6BD61AF5C66700204FAC /* alunosDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B6BD51AF5C66700204FAC /* alunosDB.m */; };
 		9A9710A01AF40C5400B20B2A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A97109F1AF40C5400B20B2A /* AVFoundation.framework */; };
 		9A9710A21AF40C5B00B20B2A /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9710A11AF40C5B00B20B2A /* AssetsLibrary.framework */; };
 		9A9710A51AF40E8800B20B2A /* selectact.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9710A41AF40E8800B20B2A /* selectact.m */; };
@@ -101,6 +107,14 @@
 		9A5B81D71AF50E060001E696 /* tela_004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tela_004.png; sourceTree = "<group>"; };
 		9A5B81D81AF50E060001E696 /* tela_005.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tela_005.png; sourceTree = "<group>"; };
 		9A5B81D91AF50E060001E696 /* template_iphone6_4.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = template_iphone6_4.ai; sourceTree = "<group>"; };
+		9A6B6BC71AF5B62200204FAC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9A6B6BCA1AF5B6C900204FAC /* alunos.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = alunos.xcdatamodel; sourceTree = "<group>"; };
+		9A6B6BCC1AF5B77200204FAC /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		9A6B6BCE1AF5B7C800204FAC /* alunos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alunos.h; sourceTree = "<group>"; };
+		9A6B6BCF1AF5B7C800204FAC /* alunos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = alunos.m; sourceTree = "<group>"; };
+		9A6B6BD11AF5BD1200204FAC /* alunosDB.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = alunosDB.sql; sourceTree = SOURCE_ROOT; };
+		9A6B6BD41AF5C66700204FAC /* alunosDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = alunosDB.h; path = ../alunosDB.h; sourceTree = "<group>"; };
+		9A6B6BD51AF5C66700204FAC /* alunosDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = alunosDB.m; path = ../alunosDB.m; sourceTree = "<group>"; };
 		9A97109F1AF40C5400B20B2A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		9A9710A11AF40C5B00B20B2A /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		9A9710A31AF40E8800B20B2A /* selectact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = selectact.h; sourceTree = "<group>"; };
@@ -145,6 +159,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A6B6BCD1AF5B77200204FAC /* libsqlite3.dylib in Frameworks */,
+				9A6B6BC81AF5B62200204FAC /* CoreData.framework in Frameworks */,
 				9A9710A21AF40C5B00B20B2A /* AssetsLibrary.framework in Frameworks */,
 				9A9710A01AF40C5400B20B2A /* AVFoundation.framework in Frameworks */,
 			);
@@ -217,6 +233,9 @@
 		9AC03CB61AF1726200761A96 = {
 			isa = PBXGroup;
 			children = (
+				9A6B6BCC1AF5B77200204FAC /* libsqlite3.dylib */,
+				9A6B6BC91AF5B6C900204FAC /* alunos.xcdatamodeld */,
+				9A6B6BC71AF5B62200204FAC /* CoreData.framework */,
 				9AD589EE1AF51A9B00D701BD /* tela_009.png */,
 				9A9710A11AF40C5B00B20B2A /* AssetsLibrary.framework */,
 				9A97109F1AF40C5400B20B2A /* AVFoundation.framework */,
@@ -238,6 +257,9 @@
 		9AC03CC11AF1726200761A96 /* canvas */ = {
 			isa = PBXGroup;
 			children = (
+				9A6B6BD41AF5C66700204FAC /* alunosDB.h */,
+				9A6B6BD51AF5C66700204FAC /* alunosDB.m */,
+				9A6B6BD11AF5BD1200204FAC /* alunosDB.sql */,
 				9AD589F01AF51F3600D701BD /* results.h */,
 				9AD589F11AF51F3600D701BD /* results.m */,
 				9A9710961AF3F97B00B20B2A /* Resources */,
@@ -253,6 +275,8 @@
 				9AC03CCF1AF1726200761A96 /* Images.xcassets */,
 				9AC03CD11AF1726200761A96 /* LaunchScreen.xib */,
 				9AC03CC21AF1726200761A96 /* Supporting Files */,
+				9A6B6BCE1AF5B7C800204FAC /* alunos.h */,
+				9A6B6BCF1AF5B7C800204FAC /* alunos.m */,
 			);
 			path = canvas;
 			sourceTree = "<group>";
@@ -377,6 +401,7 @@
 				9A5B81E31AF50E060001E696 /* 010.png in Resources */,
 				9A5B81EB1AF50E060001E696 /* 05 bg.png in Resources */,
 				9A5B81E81AF50E060001E696 /* 03 bg.png in Resources */,
+				9A6B6BD21AF5BD1200204FAC /* alunosDB.sql in Resources */,
 				9A5B81F51AF50E060001E696 /* tela_004.png in Resources */,
 				9A5B81F21AF50E060001E696 /* tela_001.png in Resources */,
 				9A5B81F61AF50E060001E696 /* tela_005.png in Resources */,
@@ -430,6 +455,9 @@
 				9A9710A51AF40E8800B20B2A /* selectact.m in Sources */,
 				9AC03CC51AF1726200761A96 /* main.m in Sources */,
 				9AC7BBB21AF3F16C008698AC /* firstpage.m in Sources */,
+				9A6B6BCB1AF5B6C900204FAC /* alunos.xcdatamodeld in Sources */,
+				9A6B6BD61AF5C66700204FAC /* alunosDB.m in Sources */,
+				9A6B6BD01AF5B7C800204FAC /* alunos.m in Sources */,
 				9FC814781AF47B05000585E3 /* PBJStrobeView.m in Sources */,
 				9FC814771AF47B05000585E3 /* PBJFocusView.m in Sources */,
 				9AD589F21AF51F3600D701BD /* results.m in Sources */,
@@ -640,6 +668,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9A6B6BC91AF5B6C900204FAC /* alunos.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9A6B6BCA1AF5B6C900204FAC /* alunos.xcdatamodel */,
+			);
+			currentVersion = 9A6B6BCA1AF5B6C900204FAC /* alunos.xcdatamodel */;
+			path = alunos.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9AC03CB71AF1726200761A96 /* Project object */;
 }
