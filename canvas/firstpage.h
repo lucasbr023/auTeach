@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EditInfoViewController.h"
 
-@interface firstpage : UIViewController
+@interface firstpage : UIViewController <UITableViewDelegate, UITableViewDataSource, EditInfoViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tblPeople;
 

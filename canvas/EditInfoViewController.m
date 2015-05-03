@@ -13,10 +13,25 @@
 
 @property (nonatomic, strong) DBManager *dbManager;
 
+-(void)loadInfoToEdit;
+
 
 @end
 
 @implementation EditInfoViewController
+
+-(void)loadInfoToEdit{
+    // Create the query.
+    NSString *query = [NSString stringWithFormat:@"select * from alunos where _id=%d", self.recordIDToEdit];
+    
+    // Load the relevant data.
+    NSArray *results = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+    
+    // Set the loaded data to the textfields.
+    self.txtNome.text = [[results objectAtIndex:0] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"nome"]];
+    self.txtSerie.text = [[results objectAtIndex:0] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"serie"]];
+    self.txtIdade.text = [[results objectAtIndex:0] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"idade"]];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -42,11 +57,12 @@
     // Initialize the dbManager object.
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"alunos.sql"];
     
-//    // Check if should load specific record for editing.
-//    if (self.recordIDToEdit != -1) {
-//        // Load the record with the specific ID from the database.
-//        [self loadInfoToEdit];
-//    }
+
+    // Check if should load specific record for editing.
+    if (self.recordIDToEdit != -1) {
+        // Load the record with the specific ID from the database.
+        [self loadInfoToEdit];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -79,7 +95,15 @@
 
 - (IBAction)saveInfo:(id)sender {
     // Prepare the query string.
-    NSString *query = [NSString stringWithFormat:@"insert into alunos values(null, '%@', '%@', %d)", self.txtNome.text, self.txtSerie.text, [self.txtIdade.text intValue]];
+    // If the recordIDToEdit property has value other than -1, then create an update query. Otherwise create an insert query.
+    NSString *query;
+    if (self.recordIDToEdit == -1) {
+        query = [NSString stringWithFormat:@"insert into alunos values(null, '%@', '%@', %d)", self.txtNome.text, self.txtSerie.text, [self.txtIdade.text intValue]];
+    }
+    else{
+        query = [NSString stringWithFormat:@"update alunos set nome='%@', serie='%@', idade=%d where _id=%d", self.txtNome.text, self.txtSerie.text, self.txtIdade.text.intValue, self.recordIDToEdit];
+    }
+    
     
     // Execute the query.
     [self.dbManager executeQuery:query];
@@ -88,30 +112,16 @@
     if (self.dbManager.affectedRows != 0) {
         NSLog(@"Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
         
+        // Inform the delegate that the editing was finished.
+        [self.delegate editingInfoWasFinished];
+        
         // Pop the view controller.
         [self.navigationController popViewControllerAnimated:YES];
     }
     else{
         NSLog(@"Could not execute the query.");
     }
-
 }
-
-
-//#pragma mark - Private method implementation
-//
-//-(void)loadInfoToEdit{
-//    // Create the query.
-//    NSString *query = [NSString stringWithFormat:@"select * from peopleInfo where peopleInfoID=%d", self.recordIDToEdit];
-//    
-//    // Load the relevant data.
-//    NSArray *results = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
-//    
-//    // Set the loaded data to the textfields.
-//    self.txtFirstname.text = [[results objectAtIndex:0] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"firstname"]];
-//    self.txtLastname.text = [[results objectAtIndex:0] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"lastname"]];
-//    self.txtAge.text = [[results objectAtIndex:0] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"age"]];
-//}
 
 
 @end

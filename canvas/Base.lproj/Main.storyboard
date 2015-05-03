@@ -13,30 +13,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" minimumFontSize="17" id="exc-Rq-5o3">
-                                <rect key="frame" x="83" y="154" width="208" height="30"/>
+                                <rect key="frame" x="57" y="141" width="249" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.16470588235294117" green="0.56470588235294117" blue="0.82745098039215681" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Idade" minimumFontSize="17" id="MGn-4P-vaS">
-                                <rect key="frame" x="83" y="281" width="208" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Série" minimumFontSize="17" id="6w2-u3-8a8">
-                                <rect key="frame" x="83" y="217" width="208" height="30"/>
+                                <rect key="frame" x="57" y="196" width="249" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Idade" minimumFontSize="17" id="MGn-4P-vaS">
+                                <rect key="frame" x="57" y="258" width="249" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ul9-N0-Pkf">
+                                <rect key="frame" x="108" y="367" width="147" height="84"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Visualizar atividades ">
+                                    <color key="titleColor" red="0.16470588235294117" green="0.56470588235294117" blue="0.82745098039215681" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Editar Informações" id="ffB-Dx-fXP">
-                        <barButtonItem key="leftBarButtonItem" systemItem="save" id="vBg-9X-dFH">
+                        <barButtonItem key="leftBarButtonItem" title="Salvar" id="vBg-9X-dFH">
                             <color key="tintColor" red="0.16470588235294117" green="0.56470588235294117" blue="0.82745098039215681" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="saveInfo:" destination="WdN-jv-Nm1" id="3Re-5N-Lxw"/>
